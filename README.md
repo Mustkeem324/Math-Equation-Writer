@@ -1,6 +1,3 @@
-Certainly! Here's a README.md file for your Math Equation Writer project using AsciiMath and Bootstrap:
-
-```markdown
 # Math Equation Writer
 
 Math Equation Writer is a web application that allows users to input, format, and preview mathematical equations using AsciiMath notation. The application is built with Bootstrap for styling and interactivity.
@@ -51,6 +48,3 @@ Contributions are welcome! If you have any suggestions, bug reports, or feature 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-```
-
-Feel free to adjust the content as needed to fit your project specifics!
