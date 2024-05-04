@@ -1,0 +1,442 @@
+
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="./assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Math Equation Writer</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+          <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+          <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+          <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </symbol>
+      </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="arrow-right-circle" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+        </symbol>
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+          <title>Bootstrap</title>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+        </symbol>
+      </svg>
+
+<div class="col-lg-8 mx-auto p-4 py-md-5">
+  <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+    <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">Math Equation Writer</span>
+    </a>
+  </header>
+
+  <main>
+    <h1 class="text-body-emphasis">Get started with Math Equation Writer</h1>
+    <p class="fs-5 col-md-8">A math equation writer is a digital tool that lets you input, format, and display mathematical equations easily. It supports a wide range of symbols and functions, offers customization options for appearance, and allows for exporting equations in different formats. It simplifies the process of incorporating math into documents or online content.</p>
+
+    <div class="mb-5">
+      <a href="https://math.chapman.edu/~jipsen/asciimathjax/asciimathjax.pdf" class="btn btn-primary btn-lg px-4">Download Syntax file</a>
+    </div>
+    <div class="mb-3">
+        <form id="mathForm">
+            <label for="exampleFormControlTextarea1" class="form-label"><h3 class="text-body-emphasis">Enter Math Equation 📝</h3></label>
+            <textarea class="form-control"  id="equation" rows="5"></textarea>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="submit">Get Result</button>
+            </div>
+        </form>
+      </div>
+      <div id="result" class="mt-4"><h4 class="text-body-emphasis ">Preview Equation 📖</h4></div>
+    <hr class="col-3 col-md-2 mb-5">
+    <table class="table caption-top">
+        <caption><h2 class="text-body-emphasis ">Syntax</h2><br><p>Most AsciiMath symbols attempt to mimic in text what they look like rendered, like <code>oo</code> for `oo`. Many symbols can also be displayed using a TeX alternative, but a preceeding backslash is not required.</p></caption>
+    
+      <thead><tr><th scope='col'>No of Symbol</th><th scope='col'>Type</th><th scope='col'>TeX al</th><th scope='col'>Symbol</th></tr>
+      <tr><td>1</td><td>+</td><td></td><td>`+`</td></tr></thead>
+      <tr><td>2</td><td>-</td><td></td><td>`-`</td></tr></thead>
+      <tr><td>3</td><td>*</td><td>cdot</td><td>`*`</td></tr></thead>
+      <tr><td>4</td><td>**</td><td>ast</td><td>`**`</td></tr></thead>
+      <tr><td>5</td><td>***</td><td>star</td><td>`***`</td></tr></thead>
+      <tr><td>6</td><td>//</td><td></td><td>`//`</td></tr></thead>
+      <tr><td>7</td><td>\</td><td>backslashsetminus</td><td>`\`</td></tr></thead>
+      <tr><td>8</td><td>xx</td><td>times</td><td>`xx`</td></tr></thead>
+      <tr><td>9</td><td>-:</td><td>div</td><td>`-:`</td></tr></thead>
+      <tr><td>10</td><td>|><</td><td>ltimes</td><td>`|><`</td></tr></thead>
+      <tr><td>11</td><td>><|</td><td>rtimes</td><td>`><|`</td></tr></thead>
+      <tr><td>12</td><td>|><|</td><td>bowtie</td><td>`|><|`</td></tr></thead>
+      <tr><td>13</td><td>@</td><td>circ</td><td>`@`</td></tr></thead>
+      <tr><td>14</td><td>o+</td><td>oplus</td><td>`o+`</td></tr></thead>
+      <tr><td>15</td><td>ox</td><td>otimes</td><td>`ox`</td></tr></thead>
+      <tr><td>16</td><td>o.</td><td>odot</td><td>`o.`</td></tr></thead>
+      <tr><td>17</td><td>sum</td><td></td><td>`sum`</td></tr></thead>
+      <tr><td>18</td><td>prod</td><td></td><td>`prod`</td></tr></thead>
+      <tr><td>19</td><td>^^</td><td>wedge</td><td>`^^`</td></tr></thead>
+      <tr><td>20</td><td>^^^</td><td>bigwedge</td><td>`^^^`</td></tr></thead>
+      <tr><td>21</td><td>vv</td><td>vee</td><td>`vv`</td></tr></thead>
+      <tr><td>22</td><td>vvv</td><td>bigvee</td><td>`vvv`</td></tr></thead>
+      <tr><td>23</td><td>nn</td><td>cap</td><td>`nn`</td></tr></thead>
+      <tr><td>24</td><td>nnn</td><td>bigcap</td><td>`nnn`</td></tr></thead>
+      <tr><td>25</td><td>uu</td><td>cup</td><td>`uu`</td></tr></thead>
+      <tr><td>26</td><td>uuu</td><td>bigcup</td><td>`uuu`</td></tr></thead>
+      <tr><td>27</td><td>2/3</td><td>frac{2}{3}</td><td>`2/3`</td></tr></thead>
+      <tr><td>28</td><td>2^3</td><td></td><td>`2^3`</td></tr></thead>
+      <tr><td>29</td><td>sqrt x</td><td></td><td>`sqrt x`</td></tr></thead>
+      <tr><td>30</td><td>root(3)(x)</td><td></td><td>`root(3)(x)`</td></tr></thead>
+      <tr><td>31</td><td>int</td><td></td><td>`int`</td></tr></thead>
+      <tr><td>32</td><td>oint</td><td></td><td>`oint`</td></tr></thead>
+      <tr><td>33</td><td>del</td><td>partial</td><td>`del`</td></tr></thead>
+      <tr><td>34</td><td>grad</td><td>nabla</td><td>`grad`</td></tr></thead>
+      <tr><td>35</td><td>+-</td><td>pm</td><td>`+-`</td></tr></thead>
+      <tr><td>36</td><td>O/</td><td>emptyset</td><td>`O/`</td></tr></thead>
+      <tr><td>37</td><td>oo</td><td>infty</td><td>`oo`</td></tr></thead>
+      <tr><td>38</td><td>aleph</td><td></td><td>`aleph`</td></tr></thead>
+      <tr><td>39</td><td>:.</td><td>therefore</td><td>`:.`</td></tr></thead>
+      <tr><td>40</td><td>:'</td><td>because</td><td>`:'`</td></tr></thead>
+      <tr><td>41</td><td>|...|</td><td>|ldots|</td><td>`|...|`</td></tr></thead>
+      <tr><td>42</td><td>|cdots|</td><td></td><td>`|cdots|`</td></tr></thead>
+      <tr><td>43</td><td>vdots</td><td></td><td>`vdots`</td></tr></thead>
+      <tr><td>44</td><td>ddots</td><td></td><td>`ddots`</td></tr></thead>
+      <tr><td>45</td><td>|\ |</td><td></td><td>`|\ |`</td></tr></thead>
+      <tr><td>46</td><td>|quad|</td><td></td><td>`|quad|`</td></tr></thead>
+      <tr><td>47</td><td>/_</td><td>angle</td><td>`/_`</td></tr></thead>
+      <tr><td>48</td><td>frown</td><td></td><td>`frown`</td></tr></thead>
+      <tr><td>49</td><td>/_\</td><td>triangle</td><td>`/_\`</td></tr></thead>
+      <tr><td>50</td><td>diamond</td><td></td><td>`diamond`</td></tr></thead>
+      <tr><td>51</td><td>square</td><td></td><td>`square`</td></tr></thead>
+      <tr><td>52</td><td>|__</td><td>lfloor</td><td>`|__`</td></tr></thead>
+      <tr><td>53</td><td>__|</td><td>rfloor</td><td>`__|`</td></tr></thead>
+      <tr><td>54</td><td>|~</td><td>lceiling</td><td>`|~`</td></tr></thead>
+      <tr><td>55</td><td>~|</td><td>rceiling</td><td>`~|`</td></tr></thead>
+      <tr><td>56</td><td>CC</td><td></td><td>`CC`</td></tr></thead>
+      <tr><td>57</td><td>NN</td><td></td><td>`NN`</td></tr></thead>
+      <tr><td>58</td><td>QQ</td><td></td><td>`QQ`</td></tr></thead>
+      <tr><td>59</td><td>RR</td><td></td><td>`RR`</td></tr></thead>
+      <tr><td>60</td><td>ZZ</td><td></td><td>`ZZ`</td></tr></thead>
+      <tr><td>61</td><td>"hi"</td><td>text(hi)</td><td>`"hi"`</td></tr></thead>
+      <tr><td>62</td><td>=</td><td></td><td>`=`</td></tr></thead>
+      <tr><td>63</td><td>!=</td><td>ne</td><td>`!=`</td></tr></thead>
+      <tr><td>64</td><td><</td><td>lt</td><td>`<`</td></tr></thead>
+      <tr><td>65</td><td>></td><td>gt</td><td>`>`</td></tr></thead>
+      <tr><td>66</td><td><=</td><td>le</td><td>`<=`</td></tr></thead>
+      <tr><td>67</td><td>>=</td><td>ge</td><td>`>=`</td></tr></thead>
+      <tr><td>68</td><td>mlt</td><td>ll</td><td>`mlt`</td></tr></thead>
+      <tr><td>69</td><td>mgt</td><td>gg</td><td>`mgt`</td></tr></thead>
+      <tr><td>70</td><td>-<</td><td>prec</td><td>`-<`</td></tr></thead>
+      <tr><td>71</td><td>-<=</td><td>preceq</td><td>`-<=`</td></tr></thead>
+      <tr><td>72</td><td>>-</td><td>succ</td><td>`>-`</td></tr></thead>
+      <tr><td>73</td><td>>-=</td><td>succeq</td><td>`>-=`</td></tr></thead>
+      <tr><td>74</td><td>in</td><td></td><td>`in`</td></tr></thead>
+      <tr><td>75</td><td>!in</td><td>notin</td><td>`!in`</td></tr></thead>
+      <tr><td>76</td><td>sub</td><td>subset</td><td>`sub`</td></tr></thead>
+      <tr><td>77</td><td>sup</td><td>supset</td><td>`sup`</td></tr></thead>
+      <tr><td>78</td><td>sube</td><td>subseteq</td><td>`sube`</td></tr></thead>
+      <tr><td>79</td><td>supe</td><td>supseteq</td><td>`supe`</td></tr></thead>
+      <tr><td>80</td><td>-=</td><td>equiv</td><td>`-=`</td></tr></thead>
+      <tr><td>81</td><td>~=</td><td>cong</td><td>`~=`</td></tr></thead>
+      <tr><td>82</td><td>~~</td><td>approx</td><td>`~~`</td></tr></thead>
+      <tr><td>83</td><td>prop</td><td>propto</td><td>`prop`</td></tr></thead>
+      <tr><td>84</td><td>and</td><td></td><td>`and`</td></tr></thead>
+      <tr><td>85</td><td>or</td><td></td><td>`or`</td></tr></thead>
+      <tr><td>86</td><td>not</td><td>neg</td><td>`not`</td></tr></thead>
+      <tr><td>87</td><td>=></td><td>implies</td><td>`=>`</td></tr></thead>
+      <tr><td>88</td><td>if</td><td></td><td>`if`</td></tr></thead>
+      <tr><td>89</td><td><=></td><td>iff</td><td>`<=>`</td></tr></thead>
+      <tr><td>90</td><td>AA</td><td>forall</td><td>`AA`</td></tr></thead>
+      <tr><td>91</td><td>EE</td><td>exists</td><td>`EE`</td></tr></thead>
+      <tr><td>92</td><td>_|_</td><td>bot</td><td>`_|_`</td></tr></thead>
+      <tr><td>93</td><td>TT</td><td>top</td><td>`TT`</td></tr></thead>
+      <tr><td>94</td><td>|--</td><td>vdash</td><td>`|--`</td></tr></thead>
+      <tr><td>95</td><td>|==</td><td>models</td><td>`|==`</td></tr></thead>
+      <tr><td>96</td><td>(</td><td></td><td>`(`</td></tr></thead>
+      <tr><td>97</td><td>)</td><td></td><td>`)`</td></tr></thead>
+      <tr><td>98</td><td>[</td><td></td><td>`[`</td></tr></thead>
+      <tr><td>99</td><td>]</td><td></td><td>`]`</td></tr></thead>
+      <tr><td>100</td><td>{</td><td></td><td>`{`</td></tr></thead>
+      <tr><td>101</td><td>}</td><td></td><td>`}`</td></tr></thead>
+      <tr><td>102</td><td>(:</td><td>langle</td><td>`(:`</td></tr></thead>
+      <tr><td>103</td><td>:)</td><td>rangle</td><td>`:)`</td></tr></thead>
+      <tr><td>104</td><td><<</td><td></td><td>`<<`</td></tr></thead>
+      <tr><td>105</td><td>>></td><td></td><td>`>>`</td></tr></thead>
+      <tr><td>106</td><td>{: x )</td><td></td><td>`{: x )`</td></tr></thead>
+      <tr><td>107</td><td>( x :}</td><td></td><td>`( x :}`</td></tr></thead>
+      <tr><td>108</td><td>abs(x)</td><td></td><td>`abs(x)`</td></tr></thead>
+      <tr><td>109</td><td>floor(x)</td><td></td><td>`floor(x)`</td></tr></thead>
+      <tr><td>110</td><td>ceil(x)</td><td></td><td>`ceil(x)`</td></tr></thead>
+      <tr><td>111</td><td>norm(vecx)</td><td></td><td>`norm(vecx)`</td></tr></thead>
+      <tr><td>112</td><td>uarr</td><td>uparrow</td><td>`uarr`</td></tr></thead>
+      <tr><td>113</td><td>darr</td><td>downarrow</td><td>`darr`</td></tr></thead>
+      <tr><td>114</td><td>rarr</td><td>rightarrow</td><td>`rarr`</td></tr></thead>
+      <tr><td>115</td><td>-></td><td>to</td><td>`->`</td></tr></thead>
+      <tr><td>116</td><td>>-></td><td>rightarrowtail</td><td>`>->`</td></tr></thead>
+      <tr><td>117</td><td>->></td><td>twoheadrightarrow</td><td>`->>`</td></tr></thead>
+      <tr><td>118</td><td>>->></td><td>twoheadrightarrowtail</td><td>`>->>`</td></tr></thead>
+      <tr><td>119</td><td>|-></td><td>mapsto</td><td>`|->`</td></tr></thead>
+      <tr><td>120</td><td>larr</td><td>leftarrow</td><td>`larr`</td></tr></thead>
+      <tr><td>121</td><td>harr</td><td>leftrightarrow</td><td>`harr`</td></tr></thead>
+      <tr><td>122</td><td>rArr</td><td>Rightarrow</td><td>`rArr`</td></tr></thead>
+      <tr><td>123</td><td>lArr</td><td>Leftarrow</td><td>`lArr`</td></tr></thead>
+      <tr><td>124</td><td>hArr</td><td>Leftrightarrow</td><td>`hArr`</td></tr></thead>
+      <tr><td>125</td><td>hat x</td><td></td><td>`hat x`</td></tr></thead>
+      <tr><td>126</td><td>bar x</td><td>overline x</td><td>`bar x`</td></tr></thead>
+      <tr><td>127</td><td>ul x</td><td>underline x</td><td>`ul x`</td></tr></thead>
+      <tr><td>128</td><td>vec x</td><td></td><td>`vec x`</td></tr></thead>
+      <tr><td>129</td><td>tilde x</td><td></td><td>`tilde x`</td></tr></thead>
+      <tr><td>130</td><td>dot x</td><td></td><td>`dot x`</td></tr></thead>
+      <tr><td>131</td><td>ddot x</td><td></td><td>`ddot x`</td></tr></thead>
+      <tr><td>132</td><td>overset(x)(=)</td><td>overset(x)(=)</td><td>`overset(x)(=)`</td></tr></thead>
+      <tr><td>133</td><td>underset(x)(=)</td><td></td><td>`underset(x)(=)`</td></tr></thead>
+      <tr><td>134</td><td>ubrace(1+2)</td><td>underbrace(1+2)</td><td>`ubrace(1+2)`</td></tr></thead>
+      <tr><td>135</td><td>obrace(1+2)</td><td>overbrace(1+2)</td><td>`obrace(1+2)`</td></tr></thead>
+      <tr><td>136</td><td>overarc(AB)</td><td>overparen(AB)</td><td>`overarc(AB)`</td></tr></thead>
+      <tr><td>137</td><td>color(red)(x)</td><td></td><td>`color(red)(x)`</td></tr></thead>
+      <tr><td>138</td><td>cancel(x)</td><td></td><td>`cancel(x)`</td></tr></thead>
+      <tr><td>139</td><td>alpha</td><td>`alpha`</td><td>`alpha`</td></tr></thead>
+      <tr><td>140</td><td>beta</td><td>`beta`</td><td>`beta`</td></tr></thead>
+      <tr><td>141</td><td>gamma</td><td>`gamma`</td><td>`gamma`</td></tr></thead>
+      <tr><td>142</td><td>delta</td><td>`delta`</td><td>`delta`</td></tr></thead>
+      <tr><td>143</td><td>epsilon</td><td>`epsilon`</td><td>`epsilon`</td></tr></thead>
+      <tr><td>144</td><td>varepsilon</td><td>`varepsilon`</td><td>`varepsilon`</td></tr></thead>
+      <tr><td>145</td><td>zeta</td><td>`zeta`</td><td>`zeta`</td></tr></thead>
+      <tr><td>146</td><td>eta</td><td>`eta`</td><td>`eta`</td></tr></thead>
+      <tr><td>147</td><td>theta</td><td>`theta`</td><td>`theta`</td></tr></thead>
+      <tr><td>148</td><td>vartheta</td><td>`vartheta`</td><td>`vartheta`</td></tr></thead>
+      <tr><td>149</td><td>iota</td><td>`iota`</td><td>`iota`</td></tr></thead>
+      <tr><td>150</td><td>kappa</td><td>`kappa`</td><td>`kappa`</td></tr></thead>
+      <tr><td>151</td><td>lambda</td><td>`lambda`</td><td>`lambda`</td></tr></thead>
+      <tr><td>152</td><td>mu</td><td>`mu`</td><td>`mu`</td></tr></thead>
+      <tr><td>153</td><td>nu</td><td>`nu`</td><td>`nu`</td></tr></thead>
+      <tr><td>154</td><td>xi</td><td>`xi`</td><td>`xi`</td></tr></thead>
+      <tr><td>155</td><td>pi</td><td>`pi`</td><td>`pi`</td></tr></thead>
+      <tr><td>156</td><td>rho</td><td>`rho`</td><td>`rho`</td></tr></thead>
+      <tr><td>157</td><td>sigma</td><td>`sigma`</td><td>`sigma`</td></tr></thead>
+      <tr><td>158</td><td>tau</td><td>`tau`</td><td>`tau`</td></tr></thead>
+      <tr><td>159</td><td>upsilon</td><td>`upsilon`</td><td>`upsilon`</td></tr></thead>
+      <tr><td>160</td><td>phi</td><td>`phi`</td><td>`phi`</td></tr></thead>
+      <tr><td>161</td><td>varphi</td><td>`varphi`</td><td>`varphi`</td></tr></thead>
+      <tr><td>162</td><td>chi</td><td>`chi`</td><td>`chi`</td></tr></thead>
+      <tr><td>163</td><td>psi</td><td>`psi`</td><td>`psi`</td></tr></thead>
+      <tr><td>164</td><td>omega</td><td>`omega`</td><td>`omega`</td></tr></thead>
+      <tr><td>165</td><td>bb "AaBbCc"</td><td>mathbf "AaBbCc"</td><td>`bb "AaBbCc"`</td></tr></thead>
+      <tr><td>166</td><td>bbb "AaBbCc"</td><td>mathbb "AaBbCc"</td><td>`bbb "AaBbCc"`</td></tr></thead>
+      <tr><td>167</td><td>cc "AaBbCc"</td><td>mathcal "AaBbCc"</td><td>`cc "AaBbCc"`</td></tr></thead>
+      <tr><td>168</td><td>tt "AaBbCc"</td><td>mathtt "AaBbCc"</td><td>`tt "AaBbCc"`</td></tr></thead>
+      <tr><td>169</td><td>fr "AaBbCc"</td><td>mathfrak "AaBbCc"</td><td>`fr "AaBbCc"`</td></tr></thead>
+      <tr><td>170</td><td>sf "AaBbCc"</td><td>mathsf "AaBbCc"</td><td>`sf "AaBbCc"`</td></tr></thead>
+      </table>    
+    <h4 class="text-body-emphasis ">Standard Functions</h4>
+    <p><code>sin, cos, tan, sec, csc, cot, arcsin, arccos, arctan, sinh, cosh, tanh, sech, csch, coth, exp, log, ln, det, dim, mod, gcd, lcm, lub, glb, min, max, f, g.</code></p>
+    <p>`sin`, `cos`, `tan`, `sec`, `csc`, `cot`, `arcsin`, `arccos`, `arctan`, `sinh`, `cosh`, `tanh`, `sech`, `csch`, `coth`, `exp`, `log`, `ln`, `det`, `dim`, `mod`, `gcd`, `lcm`,`lub`, `glb`, `min`, `max`, `f`, `g`.</p>
+    <h4 class="text-body-emphasis">Special Cases</h4>
+    <p>Matrices: <code>[[a,b],[c,d]]</code> yields to `[[a,b],[c,d]]`</p>
+    <p>Column vectors: <code>((a),(b))</code> yields to  `((a),(b))`</p>
+    <p>Augmented matrices: <code>[[a,b,|,c],[d,e,|,f]]</code> yields to `[[a,b,|,c],[d,e,|,f]]`</p>
+    <p>Matrices can be used for layout: <code>{(2x,+,17y,=,23),(x,-,y,=,5):}</code> yields `{(2x,+,17y,=,23),(x,-,y,=,5):}`</p>
+    <p>Complex subscripts: <code>lim_(N->oo) sum_(i=0)^N</code> yields to `lim_(N->oo) sum_(i=0)^N`<br>Subscripts must come before superscripts: <code>int_0^1 f(x)dx</code> yields to `int_0^1 f(x)dx`<br>Derivatives: <code>f'(x) = dy/dx</code> yields `f'(x) = dy/dx`.<br>
+    For variables other than x,y,z, or t you will need grouping symbols: <code>(dq)/(dp) </code>for `(dq)/(dp)`<br>Overbraces and underbraces: <code>ubrace(1+2+3+4)_("4 terms")</code> yields `ubrace(1+2+3+4)_("4 terms")`.<br><code>obrace(1+2+3+4)^("4 terms")</code>yields `obrace(1+2+3+4)^("4 terms")`</p>
+    <p>Here are 20 examples of ASCII math equations:</p>
+
+<p>1. The quadratic formula is written as <code>x = (-b ± √(b^2 - 4ac)) / (2a)</code> `x = (-b ± √(b^2 - 4ac)) / (2a)`.</p>
+
+<p>2. The formula for the area of a circle is denoted as <code>A = πr^2</code> `A = πr^2`.</p>
+
+<p>3. The equation for the sum of an arithmetic series can be represented as <code>S_n = (n/2)(a_1 + a_n)</code> `S_n = (n/2)(a_1 + a_n)`.</p>
+
+<p>4. Newton's second law of motion can be expressed as <code>F = ma</code> `F = ma`.</p>
+
+<p>5. The Pythagorean theorem states that <code>a^2 + b^2 = c^2</code> in a right triangle. `a^2 + b^2 = c^2`</p>
+
+<p>6. The definition of a derivative is given by <code>f'(x) = lim(h→0) [(f(x + h) - f(x)) / h]</code>. `f'(x) = lim(h→0) [(f(x + h) - f(x)) / h]`</p>
+
+<p>7. The formula for the circumference of a circle is <code>C = 2πr</code> `C = 2πr`.</p>
+
+<p>8. Euler's identity is represented as <code>e^(iπ) + 1 = 0</code> `e^(iπ) + 1 = 0`.</p>
+
+<p>9. The equation for the volume of a sphere is <code>V = (4/3)πr^3</code> `V = (4/3)πr^3`.</p>
+
+<p>10. The sum of a geometric series is given by <code>S_n = a(1 - r^n) / (1 - r)</code> `S_n = a(1 - r^n) / (1 - r)`.</p>
+
+<p>11. The definition of the derivative of a function is <code>f'(x) = lim(h→0) [f(x + h) - f(x)] / h</code> `f'(x) = lim(h→0) [f(x + h) - f(x)] / h`.</p>
+
+<p>12. The equation for the area of a rectangle is <code>A = lw</code> `A = lw`, where <code>l</code> `l` represents length and <code>w</code> `w` represents width.</p>
+
+<p>13. Coulomb's law in physics is expressed as <code>F = k * (q1 * q2) / r^2</code> `F = k * (q1 * q2) / r^2`, where <code>F</code> is the force between two point charges <code>q1</code> and <code>q2</code> separated by a distance <code>r</code>.</p>
+
+<p>14. The formula for the sum of an infinite geometric series is <code>S = a / (1 - r)</code>  `S = a / (1 - r)`when <code>|r| &lt; 1</code>.</p>
+
+<p>15. The equation for the surface area of a cylinder is <code>SA = 2πrh + 2πr^2</code> `SA = 2πrh + 2πr^2`, where <code>r</code> is the radius and <code>h</code> is the height.</p>
+
+<p>16. Ohm's law in electrical engineering states that <code>V = IR</code> `V = IR`, where <code>V</code> is voltage, <code>I</code> is current, and <code>R</code> is resistance.</p>
+
+<p>17. The formula for the volume of a cone is <code>V = (1/3)πr^2h</code> `V = (1/3)πr^2h`, where <code>r</code> is the radius of the base and <code>h</code> is the height.</p>
+
+<p>18. The equation for the kinetic energy of an object is <code>KE = (1/2)mv^2</code> `KE = (1/2)mv^2`, where <code>m</code> is the mass of the object and <code>v</code> is its velocity.</p>
+
+<p>19. The formula for the period of a pendulum is <code>T = 2π√(l/g)</code> `T = 2π√(l/g)`, where <code>l</code> is the length of the pendulum and <code>g</code> is the acceleration due to gravity.</p>
+
+<p>20. The equation for the sum of an arithmetic series can also be expressed as <code>S_n = (n/2)(2a + (n - 1)d)</code> `S_n = (n/2)(2a + (n - 1)d)`, where <code>d</code> is the common difference.</p>
+<p>Consider the following complex integral:</p>
+
+<p><code>∫[0,∞] e^(-x^2) dx = √π / 2</code> & `∫[0,∞] e^(-x^2) dx = √π / 2`</p>
+<br>
+<p>Here is a definition of the grammar used to parse AsciiMath expressions. In the Backus-Naur form given below, the letter on the left of the <code>::=</code>  `::=` represents a category of symbols that could be one of the possible sequences of symbols listed on the right. The vertical bar | separates the alternatives.</p>
+
+<pre>
+v ::= [A-Za-z] | greek letters | numbers | other constant symbols
+u ::= sqrt | text | bb | other unary symbols for font commands
+b ::= frac | root | stackrel | other binary symbols
+l ::= ( | [ | { | (: | {: | other left brackets
+r ::= ) | ] | } | :) | :} | other right brackets
+S ::= v | lEr | uS | bSS             Simple expression
+I ::= S_S | S^S | S_S^S | S          Intermediate expression
+E ::= IE | I/I                       Expression
+</pre>
+
+  </main>
+  <footer class="pt-5 my-5 text-body-secondary border-top">
+    Created by the NX Pro &middot; &copy; 2024
+  </footer>
+</div>
+<script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+    </body>
+</html>
